@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+}
+
+nav {
+    width: 80%;
+    padding: 0 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 5%;
+}
+
+button {
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-weight: 700;
+    transition: 0.2s;
+    border-radius: 20px;
+    border: none;
+    text-transform: capitalize;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.btn-yellow {
+    background-color: #FDA214;
+    color: white;
+}
+
+.btn-yellow:hover {
+    background-color: #FFB84A;
+}
+
+.btn-blue {
+    background-color: #DFE7EC;
+    color: #152938;
+}
+
+.btn-blue:hover {
+    background-color: #6395B8;
+    color: white;
+}
+
+.logo img {
+    height: 30px;
+    width: 150px;
+}
+
+.nav-btns {
+    width: 40%;
+}
+
+.nav-btns form {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-btns button {
+    width: 48%;
+    font-size: 25px;
+    padding: 10px 20px;
+}
+
+.cards {
+    height: 460px;
+    width: 460px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container {
+    height: 100px;
+    width: 100px;
+    cursor: pointer;
+}
+
+.card {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.back, .front {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.svg-img {
+    filter: invert(100%) sepia(0%) saturate(7462%) hue-rotate(70deg) brightness(98%) contrast(105%);
+    height: 70%;
+}
+
+.png-img {
+    height: 100%;
+    filter: invert(86%) sepia(25%) saturate(7094%) hue-rotate(343deg) brightness(96%) contrast(107%);
+}
+
+.front {
+    background-color: #152938;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.rotate {
+    transform: rotateY(180deg);
+}
+
+.correct {
+    filter: invert(82%) sepia(39%) saturate(0%) hue-rotate(179deg) brightness(93%) contrast(102%);
+}
+
+.moves {
+    position: absolute;
+    bottom: 3%;
+    background-color: #FDA214;
+    padding: 5px 60px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.moves h1, .moves p {
+    letter-spacing: 2px;
+    color: white;
+}
+
+.moves p {
+    font-size: 20px;
+}
+
+.score-board {
+    height: 40%;
+    width: 28%;
+    border-radius: 2rem;
+    background-color: white;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 2;
+}
+
+.score-board > div:first-child {
+    text-align: center;
+}
+
+.score-board .moves-taken h1 {
+    font-size: 2rem;
+}
+
+.score-board h1 {
+    font-size: 3rem;
+    color: #152938;
+}
+
+.score-board p {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #698699;
+}
+
+.moves-taken {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: #DFE7EC;
+}
+
+.score-board form {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.score-board form button {
+    width: 48%;
+    padding: 10px 5px;
+    font-size: 20px;
+}
+
+.backdrop {
+    background-color: #5B6973;
+    opacity: 0.7;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+@keyframes pop-up {
+    0% {
+        visibility: visible;
+        scale: 0.1;
+    }
+
+    100% {
+        scale: 1;
+    }
+}
+

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="index.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/game.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="images/logo.svg" alt="">
+        </div>
+        <div class="nav-btns">
+
+            <form action="/action" method="post">
+                <button class="btn-yellow" type="submit" name="action" value="restart">restart</button>
+                <button  class="btn-blue" type="submit" name="action" value="new">new game</button>
+            </form>
+            
+        </div>
+    </nav>
+    <div class="cards">
+
+        <% for(var i=1; i<=size; i++) { %>
+
+            <div class="container" id="<%= i %>">
+                <div class="card">
+                    <div class="front">
+                        <img src="images/qm.svg" class="svg-img">
+                    </div>
+                    <div class="back">
+                        <img src="images/<%= i %>.png" class="png-img">
+                    </div>
+                </div>
+            </div>
+            <div class="container" id="<%= i %>">
+                <div class="card">
+                    <div class="front">
+                        <img src="images/qm.svg" class="svg-img">
+                    </div>
+                    <div class="back">
+                        <img src="images/<%= i %>.png" class="png-img">
+                    </div>
+                </div>
+            </div>
+
+
+        <% } %>
+
+    </div>
+
+    <div class="moves">
+
+        <p>Moves</p>
+        <h1>0</h1>
+
+    </div>
+
+    <div class="score-board hidden">
+
+        <div>
+            <h1>You did it!</h1>
+            <p>Game over! Here's how you got on!</p>
+        </div>
+        
+        <div class="moves-taken">
+            <p>Moves Taken:</p>
+            <h1>20</h1>
+        </div>
+        <form action="/action" method="post">
+            <button class="btn-yellow" name="action" value="restart">Restart</button>
+            <button class="btn-blue" name="action" value="new">Setup New Game</button>
+        </form>
+    </div>
+
+    <div class="backdrop hidden"></div>
+
+</body>
+</html>
