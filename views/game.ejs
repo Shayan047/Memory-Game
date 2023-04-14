@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="index.js"></script>
+    <script src="game.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
@@ -13,6 +13,19 @@
     <title>Document</title>
 </head>
 <body>
+
+    <% function playersLoop(div) { %>
+
+        <% for(let i =1; i<=noOfPlayers; i++) { %>
+            <%- div.replace("Player", `Player ${i}`) %>
+        <% } %>
+
+    <% } %>
+
+    <% var playerBox = '<div class="box"><p>Player</p><h1>0</h1></div>'; %>
+
+    <% var playerRectangle = '<div class="players-score"><p>Player:</p><h1>0</h1></div>'; %>
+
     <nav>
         <div class="logo">
             <img src="images/logo.svg" alt="">
@@ -28,7 +41,7 @@
     </nav>
     <div class="cards">
 
-        <% for(var i=1; i<=size; i++) { %>
+        <% for(let i=1; i<=size; i++) { %>
 
             <div class="container" id="<%= i %>">
                 <div class="card">
@@ -50,17 +63,15 @@
                     </div>
                 </div>
             </div>
-
 
         <% } %>
 
     </div>
 
-    <div class="moves">
+    <div class="players-div">
 
-        <p>Moves</p>
-        <h1>0</h1>
-
+        <% playersLoop(playerBox); %>
+        
     </div>
 
     <div class="score-board hidden">
@@ -69,15 +80,15 @@
             <h1>You did it!</h1>
             <p>Game over! Here's how you got on!</p>
         </div>
+
+         <% playersLoop(playerRectangle); %>
+
         
-        <div class="moves-taken">
-            <p>Moves Taken:</p>
-            <h1>20</h1>
-        </div>
         <form action="/action" method="post">
             <button class="btn-yellow" name="action" value="restart">Restart</button>
             <button class="btn-blue" name="action" value="new">Setup New Game</button>
         </form>
+
     </div>
 
     <div class="backdrop hidden"></div>

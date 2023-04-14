@@ -18,19 +18,59 @@
 
     <div class="menu">
 
-        <div class="grid">
-            <div class="tag">
-                <p>Grid Size</p>
-            </div>
-            
-            <div class="grid-btns">
-                <button value="8" class="selected">4x4</button>
-                <button value="18">6x6</button>
-            </div>
-        </div>
-
         <form action="/" method="post">
-            <button class="play-btn" type="submit" name="size" value="">Play Game</button>
+
+            <div class="sub-menu">
+
+                <div class="tag">
+                    <p>No. of Players</p>
+                </div>
+
+                <div class="sub-btns players-btns">
+                    
+                    <label class="selected">
+                        <input type="radio" name="noOfPlayers" value="1" checked>
+                        One
+                    </label>
+                    <label>
+                        <input type="radio" name="noOfPlayers" value="2">
+                        Two
+                    </label>
+                    <label>
+                        <input type="radio" name="noOfPlayers" value="3">
+                        Three
+                    </label>
+                    <label>
+                        <input type="radio" name="noOfPlayers" value="4">
+                        Four
+                    </label>        
+                    
+                </div>
+                
+
+            </div>
+
+            <div class="sub-menu">
+
+                <div class="tag">
+                    <p>Grid Size</p>
+                </div>
+
+                <div class="sub-btns grid-btns">
+                    <label class="selected">
+                        <input type="radio" name="size" value="8" checked>
+                        4x4
+                    </label>
+                    <label>
+                        <input type="radio" name="size" value="18">
+                        6x6
+                    </label>
+                </div>
+
+            </div>
+
+            <button class="play-btn" type="submit">Play Game</button>
+
         </form>
 
     </div>

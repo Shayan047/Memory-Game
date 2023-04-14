@@ -1,18 +1,29 @@
-var size = 8;
-localStorage.setItem("size", size);
-
 $(document).ready(function() {
 
-    $(".grid-btns button").click(function(event) {
-        $(".play-btn").attr("value", 0);
-        $(".grid-btns button").each(function(event) {
+    $(".players-btns label").click(function() {
+        $(".players-btns label").each(function(event) {
             $(this).removeClass("selected");
         });
-
         $(this).addClass("selected");
-        $(".play-btn").attr("value", $(this).attr("value"));
-        size = Number($(this).attr("value"));
-        localStorage.setItem("size", size);
-    })
+    });
+
+    $(".grid-btns label").click(function() {
+        $(".grid-btns label").each(function(event) {
+            $(this).removeClass("selected");
+        });
+        $(this).addClass("selected");
+    });
+
+    $("form").submit(function() {
+        
+        const players = $("input[name=noOfPlayers]:checked").val();
+        const size = $("input[name=size]:checked").val();
+
+        localStorage.setItem("gameData", JSON.stringify({
+            "playersNum": players,
+            "size": size
+          }));
+          
+    });
 
 });

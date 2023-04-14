@@ -135,26 +135,8 @@ button {
     filter: invert(82%) sepia(39%) saturate(0%) hue-rotate(179deg) brightness(93%) contrast(102%);
 }
 
-.moves {
-    position: absolute;
-    bottom: 3%;
-    background-color: #FDA214;
-    padding: 5px 60px;
-    border-radius: 5px;
-    text-align: center;
-}
-
-.moves h1, .moves p {
-    letter-spacing: 2px;
-    color: white;
-}
-
-.moves p {
-    font-size: 20px;
-}
-
 .score-board {
-    height: 40%;
+    height: 60%;
     width: 28%;
     border-radius: 2rem;
     background-color: white;
@@ -185,14 +167,22 @@ button {
     color: #698699;
 }
 
-.moves-taken {
+.players-score {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     width: 80%;
     padding: 10px 15px;
     border-radius: 10px;
     background-color: #DFE7EC;
+}
+
+.players-score p {
+    font-size: 20px;
+}
+
+.players-score h1 {
+    font-size: 40px;
 }
 
 .score-board form {
@@ -218,6 +208,37 @@ button {
 .hidden {
     visibility: hidden;
 }
+
+.players-div {
+    position: absolute;
+    bottom: 3%;
+    width: 60%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.box {
+    padding: 10px 50px;
+    background-color: #DFE7EC;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.box h1, .box p {
+    letter-spacing: 2px;
+    color: #152938;
+}
+
+.box p {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.active {
+    background-color: #FDA214;
+}
+
 
 @keyframes pop-up {
     0% {

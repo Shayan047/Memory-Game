@@ -15,14 +15,12 @@ app.get("/", (req, res) => {
 });
 
 app.get("/game", (req, res) => {
-    res.render("game", {size: size});
+    res.render("game", {size: size , noOfPlayers: noOfPlayers});
 });
 
 app.post("/", (req, res) => {
     size = Number(req.body.size);
-    if(size == 0) {
-        size = 8;
-    };
+    noOfPlayers = Number(req.body.noOfPlayers);
     res.redirect("/game");
 });
 

@@ -26,8 +26,28 @@ button {
 }
 
 form {
+    height: 100%;
     width: 100%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+label {
+    letter-spacing: 1px;
+    background-color: #BCCED9;
+    color: white;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 8px 0;
+    font-family: 'Atkinson Hyperlegible', sans-seri;
+}
+
+input {
+    display: none;
 }
 
 .svg-img {
@@ -38,17 +58,13 @@ form {
 
 .menu {
     background-color: white;
-    height: 250px;
-    width: 500px;
+    height: 30%;
+    width: 550px;
     border-radius: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    padding: 20px 0;
 }
 
-.grid {
-    height: 50%;
+.sub-menu {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -68,15 +84,18 @@ form {
     letter-spacing: 1px;
 }
 
-.grid-btns {
+.sub-btns {
     width: 80%;
     display: flex;
     justify-content: space-between;
 }
 
-.grid-btns button {
-    width: 45%;
-    letter-spacing: 1px;
+.grid-btns label {
+    width: 48%;
+}
+
+.players-btns label {
+    width: 23%;
 }
 
 .play-btn {
@@ -95,4 +114,5 @@ form {
 .selected {
     background-color: #304859;
     color: white;
+    transition: 0.2s;
 }
